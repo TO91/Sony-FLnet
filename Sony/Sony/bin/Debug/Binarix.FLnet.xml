@@ -1,0 +1,2793 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Binarix.FLnet</name>
+    </assembly>
+    <members>
+        <member name="T:Binarix.FALink.FLMessage">
+            <summary>
+            メッセージ基本クラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.NetworkID">
+            <summary>
+            ネットワークID
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.Node">
+            <summary>
+            送信元／送信先ノード番号
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.Broadcast">
+            <summary>
+            ブロードキャストフラグ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.TransactionCode">
+            <summary>
+            トランザクションコード
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.BlockAddress">
+            <summary>
+            バイトブロック／ワードブロックのアドレス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.BlockSize">
+            <summary>
+            バイトブロック／ワードブロックのサイズ（単位：バイトまたはワード）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.VenderName">
+            <summary>
+            ベンダー名
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.SubCode">
+            <summary>
+            サブコード（ベンダーが管理するコード）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessage.Data">
+            <summary>
+            データ
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLSocketLog">
+            <summary>
+            送受信に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.SocketSent">
+            <summary>
+            通算ソケット部送信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.SocketSendError">
+            <summary>
+            通算ソケット部送信エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.EthernetSendError">
+            <summary>
+            イーサネット送信エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.Reserved1">
+            <summary>
+            予約1
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.SocketReceived">
+            <summary>
+            通算ソケット部受信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.SocketReceiveError">
+            <summary>
+            通算ソケット部受信エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.EthernetReceiveError">
+            <summary>
+            イーサネット受信エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSocketLog.Reserved2">
+            <summary>
+            予約2
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLFrameLog">
+            <summary>
+            フレームの種類に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.TokenSent">
+            <summary>
+            トークン送信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.CyclicSent">
+            <summary>
+            サイクリックフレーム送信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.UnicastMessageSent">
+            <summary>
+            1対1メッセージ送信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.BroadcastMessageSent">
+            <summary>
+            1対nメッセージ送信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.Reserved1">
+            <summary>
+            予約1
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.TokenReceived">
+            <summary>
+            トークン受信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.CyclicReceived">
+            <summary>
+            サイクリックフレーム受信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.UnicastMessageReceived">
+            <summary>
+            1対1メッセージ受信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.BroadcastMessageReceived">
+            <summary>
+            1対nメッセージ受信回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLFrameLog.Reserved2">
+            <summary>
+            予約2
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLCyclicLog">
+            <summary>
+            サイクリック伝送に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLCyclicLog.CyclicReceiveError">
+            <summary>
+            サイクリック伝送受信エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLCyclicLog.AddressSizeError">
+            <summary>
+            サイクリックアドレス・サイズエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLCyclicLog.CbnError">
+            <summary>
+            サイクリックCBNエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLCyclicLog.TbnError">
+            <summary>
+            サイクリックTBNエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLCyclicLog.BSizeError">
+            <summary>
+            サイクリックBSIZEエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLCyclicLog.Reserved">
+            <summary>
+            予約
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLMessageLog">
+            <summary>
+            メッセージ伝送に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageLog.MessageResent">
+            <summary>
+            メッセージ伝送再送回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageLog.MessageResendExceeded">
+            <summary>
+            メッセージ伝送再送オーバ回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageLog.Reserved1">
+            <summary>
+            予約1
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageLog.MessageReceiveError">
+            <summary>
+            メッセージ伝送受信エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageLog.SequenceVersionError">
+            <summary>
+            メッセージ伝送通番バージョンエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageLog.SequenceVersionResent">
+            <summary>
+            メッセージ伝送通番再送認識回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageLog.Reserved2">
+            <summary>
+            予約2
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLAckLog">
+            <summary>
+            ACKに関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLAckLog.AckError">
+            <summary>
+            ACKエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLAckLog.SequenceVersionError">
+            <summary>
+            ACK通番バージョンエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLAckLog.SequenceNumberError">
+            <summary>
+            ACK通番番号エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLAckLog.NodeNumberError">
+            <summary>
+            ACKノード番号エラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLAckLog.TransactionCodeError">
+            <summary>
+            ACKトランザクションコードエラー回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLAckLog.Reserved">
+            <summary>
+            予約
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLTokenLog">
+            <summary>
+            トークンに関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLTokenLog.Duplication">
+            <summary>
+            トークン多重化認識回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLTokenLog.Discarded">
+            <summary>
+            トークン破棄回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLTokenLog.Reissued">
+            <summary>
+            トークン再発行回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLTokenLog.Reserved1">
+            <summary>
+            予約1
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLTokenLog.HoldingTimeout">
+            <summary>
+            トークン保持タイムアウト回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLTokenLog.WatchdogTimeout">
+            <summary>
+            トークン監視タイムアウト回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLTokenLog.Reserved2">
+            <summary>
+            予約2
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLStatusLog">
+            <summary>
+            ノードの稼働状態、加入及び離脱に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.TotalRunningTime">
+            <summary>
+            通算稼動時間（秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.FrameWait">
+            <summary>
+            フレーム待ち状態回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.OwnNodeParticipated">
+            <summary>
+            加入回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.OwnNodeLeft">
+            <summary>
+            自己離脱回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.OwnNodeLeftBySkip">
+            <summary>
+            スキップによる離脱回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.OthersNodeLeft">
+            <summary>
+            他ノード離脱認識回数
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.Reserved">
+            <summary>
+            予約
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusLog.Participation">
+            <summary>
+            参加認識ノード
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLLogData">
+            <summary>
+            ログデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.SocketLog">
+            <summary>
+            送受信に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.FrameLog">
+            <summary>
+            フレームの種類に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.CyclicLog">
+            <summary>
+            サイクリック伝送に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.MessageLog">
+            <summary>
+            メッセージ伝送に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.AckLog">
+            <summary>
+            ACKに関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.TokenLog">
+            <summary>
+            トークンに関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.StatusLog">
+            <summary>
+            ノードの稼働状態、加入及び離脱に関するデータ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.Reserved">
+            <summary>
+            予約
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLLogData.VenderData">
+            <summary>
+            ベンダー定義可能領域に関するデータ（予約）
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet">
+            <summary>
+            BXFLnet.dllのラッパークラス
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.ConvertToSafeName(System.String)">
+            <summary>
+            アンマネージコードで例外が発生しない安全な名前に変換する
+            </summary>
+            <param name="name">変換する名前</param>
+            <returns>変換した名前</returns>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_MESSAGE">
+            <summary>
+            メッセージ構造体
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_MESSAGE.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_MESSAGE.SetBaseFields(Binarix.FALink.FLMessage)">
+            <summary>
+            メッセージ基本クラスのフィールドをセットする
+            </summary>
+            <param name="message">メッセージクラス</param>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_MESSAGE.CreateMessageSent">
+            <summary>
+            送信メッセージを作成する
+            </summary>
+            <returns>送信メッセージ</returns>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_MESSAGE.CreateMessageReceived">
+            <summary>
+            受信メッセージを作成する
+            </summary>
+            <returns>受信メッセージ</returns>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_NETWORK_INFO">
+            <summary>
+            ネットワーク情報構造体
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_NETWORK_INFO.CopyTo(Binarix.FALink.FLNetworkInfo)">
+            <summary>
+            FLNetworkInfoにコピーする
+            </summary>
+            <param name="networkInfo">コピー先のFLNetworkInfoオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_NODE_INFO">
+            <summary>
+            ノード情報構造体
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_NODE_INFO.CopyTo(Binarix.FALink.FLNodeInfo)">
+            <summary>
+            FLNodeInfoにコピーする
+            </summary>
+            <param name="nodeInfo">コピー先のFLNodeInfoオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_NODE_LIST">
+            <summary>
+            ノード一覧構造体
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_NODE_LIST.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_NODE_LIST.CopyTo(Binarix.FALink.FLNodeList)">
+            <summary>
+            FLNodeListにコピーする
+            </summary>
+            <param name="nodeList">コピー先のFLNodeListオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_SOCKET_LOG">
+            <summary>
+            送受信に関するデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_SOCKET_LOG.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_SOCKET_LOG.CopyTo(Binarix.FALink.FLSocketLog)">
+            <summary>
+            FLSocketLogにコピーする
+            </summary>
+            <param name="log">コピー先のFLSocketLogオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_FRAME_LOG">
+            <summary>
+            フレームの種類に関するデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_FRAME_LOG.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_FRAME_LOG.CopyTo(Binarix.FALink.FLFrameLog)">
+            <summary>
+            FLFrameLogにコピーする
+            </summary>
+            <param name="log">コピー先のFLFrameLogオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_CYCLIC_LOG">
+            <summary>
+            サイクリック伝送に関するデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_CYCLIC_LOG.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_CYCLIC_LOG.CopyTo(Binarix.FALink.FLCyclicLog)">
+            <summary>
+            FLCyclicLogにコピーする
+            </summary>
+            <param name="log">コピー先のFLCyclicLogオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_MESSAGE_LOG">
+            <summary>
+            メッセージ伝送に関するデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_MESSAGE_LOG.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_MESSAGE_LOG.CopyTo(Binarix.FALink.FLMessageLog)">
+            <summary>
+            FLMessageLogにコピーする
+            </summary>
+            <param name="log">コピー先のFLMessageLogオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_ACK_LOG">
+            <summary>
+            ACKに関するデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_ACK_LOG.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_ACK_LOG.CopyTo(Binarix.FALink.FLAckLog)">
+            <summary>
+            FLAckLogにコピーする
+            </summary>
+            <param name="log">コピー先のFLAckLogオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_TOKEN_LOG">
+            <summary>
+            トークンに関するデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_TOKEN_LOG.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_TOKEN_LOG.CopyTo(Binarix.FALink.FLTokenLog)">
+            <summary>
+            FLTokenLogにコピーする
+            </summary>
+            <param name="log">コピー先のFLTokenLogオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_STATUS_LOG">
+            <summary>
+            ノードの稼働状態、加入及び離脱に関するデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_STATUS_LOG.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_STATUS_LOG.CopyTo(Binarix.FALink.FLStatusLog)">
+            <summary>
+            FLStatusLogにコピーする
+            </summary>
+            <param name="log">コピー先のFLStatusLogオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_LOG_DATA">
+            <summary>
+            ログデータ
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_LOG_DATA.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_LOG_DATA.CopyTo(Binarix.FALink.FLLogData)">
+            <summary>
+            FLLogDataにコピーする
+            </summary>
+            <param name="logData">コピー先のFLLogDataオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_SETTINGS">
+            <summary>
+            ノード設定構造体
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_SETTINGS.CopyTo(Binarix.FALink.FLSettings)">
+            <summary>
+            FLSettingsにコピーする
+            </summary>
+            <param name="settings">コピー先のFLSettingsオブジェクト</param>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_SETTINGS.op_Explicit(Binarix.FALink.FLSettings)~Binarix.FALink.BXFLnet.BFL_SETTINGS">
+            <summary>
+            BFL_SETTINGS構造体への型変換
+            </summary>
+            <param name="settings">FLSettingsオブジェクト</param>
+            <returns>BFL_SETTINGS構造体</returns>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_IP_ADDRESS_LIST">
+            <summary>
+            IPアドレス一覧構造体
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_IP_ADDRESS_LIST.Initialize">
+            <summary>
+            初期化
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_VERSION">
+            <summary>
+            バージョン構造体
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.BXFLnet.BFL_VERSION.CopyTo(Binarix.FALink.FLVersion)">
+            <summary>
+            FLVersionにコピーする
+            </summary>
+            <param name="version">コピー先のFLVersionオブジェクト</param>
+        </member>
+        <member name="T:Binarix.FALink.BXFLnet.BFL_MESSAGE_PROC_TABLE">
+            <summary>
+            メッセージ通知コールバック関数テーブル構造体
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLSettings">
+            <summary>
+            ノード設定クラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.IPAddress">
+            <summary>
+            IPアドレス（0の時はデフォルトIPアドレスにバインドする）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.Node">
+            <summary>
+            ノード番号（0の時はホストアドレスをノード番号にする）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.NodeName">
+            <summary>
+            ノード名（設備名）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.C1Address">
+            <summary>
+            コモンメモリー領域1先頭アドレス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.C1Size">
+            <summary>
+            コモンメモリー領域1サイズ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.C2Address">
+            <summary>
+            コモンメモリー領域2先頭アドレス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.C2Size">
+            <summary>
+            コモンメモリー領域2サイズ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.MinFrameTime">
+            <summary>
+            最小許容フレーム間隔（0～50 単位：100μ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLSettings.TokenWatchdogTime">
+            <summary>
+            トークン監視時間（1～255ミリ秒）
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLAnyData">
+            <summary>
+            汎用データ型クラス
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.Copy(System.Byte*,System.Int32,System.Byte*,System.Int32)">
+            <summary>
+            データをコピーする
+            </summary>
+            <param name="pDstBuffer">コピー先バッファのポインター</param>
+            <param name="dstLength">コピー先バッファのバイト数</param>
+            <param name="pSrcBuffer">コピー元バッファのポインター</param>
+            <param name="srcLength">コピー元バッファのバイト数</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor">
+            <summary>
+            コンストラクター
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Boolean)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">bool値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Boolean)~Binarix.FALink.FLAnyData">
+            <summary>
+            bool型変換
+            </summary>
+            <param name="value">bool値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Boolean">
+            <summary>
+            bool型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>bool値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.SByte)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">sbyte値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.SByte)~Binarix.FALink.FLAnyData">
+            <summary>
+            sbyte型変換
+            </summary>
+            <param name="value">sbyte値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.SByte">
+            <summary>
+            sbyte型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>byte値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Byte)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">byte値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Byte)~Binarix.FALink.FLAnyData">
+            <summary>
+            byte型変換
+            </summary>
+            <param name="value">byte値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Byte">
+            <summary>
+            byte型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>byte値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Char)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">char値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Char)~Binarix.FALink.FLAnyData">
+            <summary>
+            char型変換
+            </summary>
+            <param name="value">char値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Char">
+            <summary>
+            char型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>char値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Int16)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">short値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Int16)~Binarix.FALink.FLAnyData">
+            <summary>
+            short型変換
+            </summary>
+            <param name="value">short値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Int16">
+            <summary>
+            short型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>short値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.UInt16)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">ushort値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.UInt16)~Binarix.FALink.FLAnyData">
+            <summary>
+            ushort型変換
+            </summary>
+            <param name="value">ushort値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.UInt16">
+            <summary>
+            ushort型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>ushort値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Int32)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">int値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Int32)~Binarix.FALink.FLAnyData">
+            <summary>
+            int型変換
+            </summary>
+            <param name="value">int値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Int32">
+            <summary>
+            int型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>int値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.UInt32)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">uint値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.UInt32)~Binarix.FALink.FLAnyData">
+            <summary>
+            uint型変換
+            </summary>
+            <param name="value">uint値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.UInt32">
+            <summary>
+            uint型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>uint値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Int64)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">long値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Int64)~Binarix.FALink.FLAnyData">
+            <summary>
+            long型変換
+            </summary>
+            <param name="value">long値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Int64">
+            <summary>
+            long型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>long値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.UInt64)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">ulong値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.UInt64)~Binarix.FALink.FLAnyData">
+            <summary>
+            ulong型変換
+            </summary>
+            <param name="value">ulong値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.UInt64">
+            <summary>
+            ulong型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>ulong値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Single)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">float値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Single)~Binarix.FALink.FLAnyData">
+            <summary>
+            float型変換
+            </summary>
+            <param name="value">float値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Single">
+            <summary>
+            float型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>float値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Double)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">double値</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Double)~Binarix.FALink.FLAnyData">
+            <summary>
+            double型変換
+            </summary>
+            <param name="value">double値</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Double">
+            <summary>
+            double型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>double値</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Boolean[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">bool配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Boolean[])~Binarix.FALink.FLAnyData">
+            <summary>
+            bool配列型変換
+            </summary>
+            <param name="value">bool配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Boolean[]">
+            <summary>
+            bool配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>bool配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.SByte[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">sbyte配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.SByte[])~Binarix.FALink.FLAnyData">
+            <summary>
+            sbyte配列型変換
+            </summary>
+            <param name="value">sbyte配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.SByte[]">
+            <summary>
+            sbyte配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>sbyte配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Byte[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">byte配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Byte[])~Binarix.FALink.FLAnyData">
+            <summary>
+            byte配列型変換
+            </summary>
+            <param name="value">byte配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Byte[]">
+            <summary>
+            byte配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>byte配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Int16[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">short配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Int16[])~Binarix.FALink.FLAnyData">
+            <summary>
+            short配列型変換
+            </summary>
+            <param name="value">short配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Int16[]">
+            <summary>
+            short配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>short配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.UInt16[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">ushort配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.UInt16[])~Binarix.FALink.FLAnyData">
+            <summary>
+            ushort配列型変換
+            </summary>
+            <param name="value">ushort配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.UInt16[]">
+            <summary>
+            ushort配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>ushort配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Char[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">char配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Char[])~Binarix.FALink.FLAnyData">
+            <summary>
+            char配列型変換
+            </summary>
+            <param name="value">char配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Char[]">
+            <summary>
+            char配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>char配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Int32[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">int配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Int32[])~Binarix.FALink.FLAnyData">
+            <summary>
+            int配列型変換
+            </summary>
+            <param name="value">int配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Int32[]">
+            <summary>
+            int配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>int配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.UInt32[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">uint配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.UInt32[])~Binarix.FALink.FLAnyData">
+            <summary>
+            uint配列型変換
+            </summary>
+            <param name="value">uint配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.UInt32[]">
+            <summary>
+            uint配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>uint配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Int64[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">long配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Int64[])~Binarix.FALink.FLAnyData">
+            <summary>
+            long配列型変換
+            </summary>
+            <param name="value">long配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Int64[]">
+            <summary>
+            long配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>long配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.UInt64[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">ulong配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.UInt64[])~Binarix.FALink.FLAnyData">
+            <summary>
+            ulong配列型変換
+            </summary>
+            <param name="value">ulong配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.UInt64[]">
+            <summary>
+            ulong配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>ulong配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Single[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">float配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Single[])~Binarix.FALink.FLAnyData">
+            <summary>
+            float配列型変換
+            </summary>
+            <param name="value">float配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Single[]">
+            <summary>
+            float配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>float配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.Double[])">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="value">double配列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.Double[])~Binarix.FALink.FLAnyData">
+            <summary>
+            double配列型変換
+            </summary>
+            <param name="value">double配列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~System.Double[]">
+            <summary>
+            double配列型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>double配列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.String,System.Text.Encoding)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="str">文字列</param>
+            <param name="enc">エンコーディング</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.#ctor(System.String)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="str">文字列</param>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Implicit(System.String)~Binarix.FALink.FLAnyData">
+            <summary>
+            文字列型変換
+            </summary>
+            <param name="str">文字列</param>
+            <returns>FLAnyDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.ToString">
+            <summary>
+            文字列型変換
+            </summary>
+            <returns>文字列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.ToString(System.Text.Encoding)">
+            <summary>
+            文字列型変換
+            </summary>
+            <param name="enc">エンコーディング</param>
+            <returns>文字列</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~Binarix.FALink.FLLogData">
+            <summary>
+            FLLogData型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>FLLogDataオブジェクト</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLAnyData.op_Explicit(Binarix.FALink.FLAnyData)~Binarix.FALink.FLNodeInfo">
+            <summary>
+            FLNodeInfo型変換
+            </summary>
+            <param name="data">FLAnyDataオブジェクト</param>
+            <returns>FLNodeInfoオブジェクト</returns>
+        </member>
+        <member name="P:Binarix.FALink.FLAnyData.Size">
+            <summary>
+            データサイズ
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLNetworkInfo">
+            <summary>
+            ネットワーク情報クラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNetworkInfo.MinFrameTime">
+            <summary>
+            最小許容フレーム間隔（参加ノード中の最大値）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNetworkInfo.RefreshCycleTime">
+            <summary>
+            リフレッシュサイクル許容時間（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNetworkInfo.RefreshCycleCurTime">
+            <summary>
+            リフレッシュサイクル時間現在値（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNetworkInfo.RefreshCycleMinTime">
+            <summary>
+            リフレッシュサイクル時間最小値（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNetworkInfo.RefreshCycleMaxTime">
+            <summary>
+            リフレッシュサイクル時間最大値（ミリ秒）
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLnet">
+            <summary>
+            FLnetクラス
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLnet.Broadcast">
+            <summary>
+            ブロードキャスト用ノード番号
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnChangeStatus(System.Int32)">
+            <summary>
+            ノード状態変更通知コールバック関数
+            </summary>
+            <param name="networkID">ネットワークID</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnEndSend(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            メッセージ送信終了通知コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveRequestReadByte(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            バイトブロックリード（要求）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveRequestWriteByte(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            バイトブロックライト（要求）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveRequestReadWord(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ワードブロックリード（要求）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveRequestWriteWord(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ワードブロックライト（要求）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveRequestStop(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            停止指令（要求）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveRequestStart(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            運転指令（要求）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveRequestVenderMessage(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ベンダー固有（要求）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyReadByte(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            バイトブロックリード（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyWriteByte(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            バイトブロックライト（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyReadWord(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ワードブロックリード（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyWriteWord(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ワードブロックライト（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyReadParam(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ネットワークパラメータリード（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyWriteParam(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ネットワークパラメータライト（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyStop(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            停止指令（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyStart(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            運転指令（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyReadProfile(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            プロファイルリード（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyReadLog(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ログデータリード（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyClearLog(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ログデータクリア（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyLoopBack(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            メッセージ折返し（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveReplyVenderMessage(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            ベンダー固有（応答）メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.OnReceiveUserMessage(Binarix.FALink.BXFLnet.BFL_MESSAGE@)">
+            <summary>
+            透過形メッセージ受信コールバック関数
+            </summary>
+            <param name="message">メッセージ構造体</param>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.Open">
+            <summary>
+            ネットワークをオープンする
+            </summary>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.Close">
+            <summary>
+            ネットワークをクローズする
+            </summary>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.Read(System.Int32,System.UInt16[],System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリーを読み込む
+            </summary>
+            <param name="c1Address">領域1のアドレス</param>
+            <param name="c1Data">領域1のデータを格納するushort配列。データ不要の時はnull。</param>
+            <param name="c2Address">領域2のアドレス</param>
+            <param name="c2Data">領域2のデータを格納するushort配列。データ不要の時はnull。</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadRelative(System.Int32,System.UInt16[],System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリーを相対アドレス指定で読み込む
+            </summary>
+            <param name="c1Address">領域1の相対アドレス</param>
+            <param name="c1Data">領域1のデータを格納するushort配列。データ不要の時はnull。</param>
+            <param name="c2Address">領域2の相対アドレス</param>
+            <param name="c2Data">領域2のデータを格納するushort配列。データ不要の時はnull。</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC1(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域1を読み込む
+            </summary>
+            <param name="c1Address">領域1のアドレス</param>
+            <param name="c1Data">領域1のデータを格納するushort配列</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC1(System.Int32,System.UInt16@)">
+            <summary>
+            コモンメモリー領域1を読み込む
+            </summary>
+            <param name="c1Address">領域1のアドレス</param>
+            <param name="c1Data">領域1のデータを格納するushort変数</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC1Relative(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域1を相対アドレス指定で読み込む
+            </summary>
+            <param name="c1Address">領域1の相対アドレス</param>
+            <param name="c1Data">領域1のデータを格納するushort配列</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC1Relative(System.Int32,System.UInt16@)">
+            <summary>
+            コモンメモリー領域1を相対アドレス指定で読み込む
+            </summary>
+            <param name="c1Address">領域1の相対アドレス</param>
+            <param name="c1Data">領域1のデータを格納するushort変数</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC2(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域2を読み込む
+            </summary>
+            <param name="c2Address">領域2のアドレス</param>
+            <param name="c2Data">領域2のデータを格納するushort配列</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC2(System.Int32,System.UInt16@)">
+            <summary>
+            コモンメモリー領域2を読み込む
+            </summary>
+            <param name="c2Address">領域2のアドレス</param>
+            <param name="c2Data">領域2のデータを格納するushort配列</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC2Relative(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域2を相対アドレス指定で読み込む
+            </summary>
+            <param name="c2Address">領域2の相対アドレス</param>
+            <param name="c2Data">領域2のデータを格納するushort配列</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReadC2Relative(System.Int32,System.UInt16@)">
+            <summary>
+            コモンメモリー領域2を相対アドレス指定で読み込む
+            </summary>
+            <param name="c2Address">領域2の相対アドレス</param>
+            <param name="c2Data">領域2のデータを格納するushort配列</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.Write(System.Int32,System.UInt16[],System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリーに書き込む
+            </summary>
+            <param name="c1Address">領域1のアドレス</param>
+            <param name="c1Data">領域1に書き込むデータ</param>
+            <param name="c2Address">領域2のアドレス</param>
+            <param name="c2Data">領域2に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteRelative(System.Int32,System.UInt16[],System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリーに相対アドレス指定で書き込む
+            </summary>
+            <param name="c1Address">領域1の相対アドレス</param>
+            <param name="c1Data">領域1に書き込むデータ</param>
+            <param name="c2Address">領域2の相対アドレス</param>
+            <param name="c2Data">領域2に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC1(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域1に書き込む
+            </summary>
+            <param name="c1Address">領域1のアドレス</param>
+            <param name="c1Data">領域1に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC1(System.Int32,System.UInt16)">
+            <summary>
+            コモンメモリー領域1に書き込む
+            </summary>
+            <param name="c1Address">領域1のアドレス</param>
+            <param name="c1Data">領域1に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC1Relative(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域1に相対アドレス指定で書き込む
+            </summary>
+            <param name="c1Address">領域1の相対アドレス</param>
+            <param name="c1Data">領域1に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC1Relative(System.Int32,System.UInt16)">
+            <summary>
+            コモンメモリー領域1に相対アドレス指定で書き込む
+            </summary>
+            <param name="c1Address">領域1の相対アドレス</param>
+            <param name="c1Data">領域1に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC2(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域2に書き込む
+            </summary>
+            <param name="c2Address">領域2のアドレス</param>
+            <param name="c2Data">領域2に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC2(System.Int32,System.UInt16)">
+            <summary>
+            コモンメモリー領域2に書き込む
+            </summary>
+            <param name="c2Address">領域2のアドレス</param>
+            <param name="c2Data">領域2に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC2Relative(System.Int32,System.UInt16[])">
+            <summary>
+            コモンメモリー領域2に相対アドレス指定で書き込む
+            </summary>
+            <param name="c2Address">領域2の相対アドレス</param>
+            <param name="c2Data">領域2に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.WriteC2Relative(System.Int32,System.UInt16)">
+            <summary>
+            コモンメモリー領域2に相対アドレス指定で書き込む
+            </summary>
+            <param name="c2Address">領域2の相対アドレス</param>
+            <param name="c2Data">領域2に書き込むデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendReadByte(System.Int32,System.UInt32,System.UInt32)">
+            <summary>
+            バイトブロックリード要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータのバイト数</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendWriteByte(System.Int32,System.UInt32,Binarix.FALink.FLAnyData)">
+            <summary>
+            バイトブロックライト要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="data">送信するデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendReadWord(System.Int32,System.UInt32,System.UInt32)">
+            <summary>
+            ワードブロックリード要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータのワード数</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendWriteWord(System.Int32,System.UInt32,Binarix.FALink.FLAnyData)">
+            <summary>
+            ワードブロックライト要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="data">送信するデータ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendReadNetworkParam(System.Int32)">
+            <summary>
+            ネットワークパラメータリード要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendWriteNetworkParam(System.Int32,Binarix.FALink.FLNetworkParamOptions,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            ネットワークパラメータライト要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="flags">設定パラメータフラグ</param>
+            <param name="c1Address">領域1アドレス</param>
+            <param name="c1Size">領域1サイズ（単位：WORD）</param>
+            <param name="c2Address">領域2アドレス</param>
+            <param name="c2Size">領域2サイズ（単位：WORD）</param>
+            <param name="nodeName">ノード名</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendStop(System.Int32)">
+            <summary>
+            停止指令要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendStart(System.Int32)">
+            <summary>
+            運転指令要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendReadProfile(System.Int32)">
+            <summary>
+            プロファイルリード要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendReadLog(System.Int32)">
+            <summary>
+            ログデータリード要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendClearLog(System.Int32)">
+            <summary>
+            ログデータクリア要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendLoopback(System.Int32,Binarix.FALink.FLAnyData)">
+            <summary>
+            メッセージ折返し要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="data">送信データ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendVenderMessage(System.Int32,System.String,System.Byte[],Binarix.FALink.FLAnyData)">
+            <summary>
+            ベンダー固有要求メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="venderName">ベンダー名</param>
+            <param name="subCode">サブコード</param>
+            <param name="data">送信データ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SendUserMessage(System.Int32,System.Int32,Binarix.FALink.FLAnyData)">
+            <summary>
+            透過形メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="transactionCode">トランザクションコード</param>
+            <param name="data">送信データ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyReadByte(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32,Binarix.FALink.FLAnyData)">
+            <summary>
+            バイトブロックリード応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：バイト）</param>
+            <param name="data">データ（またはエラーコード）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyReadByte(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32)">
+            <summary>
+            バイトブロックリード応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：バイト）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyWriteByte(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32,Binarix.FALink.FLAnyData)">
+            <summary>
+            バイトブロックライト応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：バイト）</param>
+            <param name="data">エラーコード</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyWriteByte(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32)">
+            <summary>
+            バイトブロックライト応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：バイト）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyReadWord(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32,Binarix.FALink.FLAnyData)">
+            <summary>
+            ワードブロックリード応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：ワード）</param>
+            <param name="data">データ（またはエラーコード）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyReadWord(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32)">
+            <summary>
+            ワードブロックリード応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：ワード）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyWriteWord(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32,Binarix.FALink.FLAnyData)">
+            <summary>
+            ワードブロックライト応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：ワード）</param>
+            <param name="data">エラーコード</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyWriteWord(System.Int32,Binarix.FALink.FLMessageReply,System.UInt32,System.UInt32)">
+            <summary>
+            ワードブロックライト応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="blockAddress">メッセージ仮想アドレス空間におけるアドレス</param>
+            <param name="blockSize">メッセージ仮想アドレス空間におけるデータサイズ（単位：ワード）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyStop(System.Int32,Binarix.FALink.FLMessageReply,Binarix.FALink.FLAnyData)">
+            <summary>
+            停止指令応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="data">エラーコード</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyStop(System.Int32,Binarix.FALink.FLMessageReply)">
+            <summary>
+            停止指令応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyStart(System.Int32,Binarix.FALink.FLMessageReply,Binarix.FALink.FLAnyData)">
+            <summary>
+            運転指令応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="data">エラーコード</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyStart(System.Int32,Binarix.FALink.FLMessageReply)">
+            <summary>
+            運転指令応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyVenderMessage(System.Int32,Binarix.FALink.FLMessageReply,System.String,System.Byte[],Binarix.FALink.FLAnyData)">
+            <summary>
+            ベンダー固有応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="venderName">ベンダー名</param>
+            <param name="subCode">サブコード</param>
+            <param name="data">送信データ</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ReplyVenderMessage(System.Int32,Binarix.FALink.FLMessageReply,System.String,System.Byte[])">
+            <summary>
+            ベンダー固有応答メッセージを送信する
+            </summary>
+            <param name="node">メッセージ送信先ノード番号</param>
+            <param name="reply">メッセージ処理結果（応答メッセージの結果）</param>
+            <param name="venderName">ベンダー名</param>
+            <param name="subCode">サブコード</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SetUpperLayerStatus(Binarix.FALink.FLUpperLayerStatus)">
+            <summary>
+            上位層の状態を設定する
+            </summary>
+            <param name="status">上位層の状態</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.GetNetworkInfo(Binarix.FALink.FLNetworkInfo@)">
+            <summary>
+            ネットワーク情報を取得する
+            </summary>
+            <param name="networkInfo">ネットワーク情報を格納したFLNetworkInfoオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.GetNodeInfo(System.Int32,Binarix.FALink.FLNodeInfo@)">
+            <summary>
+            ノード情報を取得する
+            </summary>
+            <param name="node">ノード番号</param>
+            <param name="nodeInfo">ノード情報を格納したFLNodeInfoオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.GetNodeInfo(Binarix.FALink.FLNodeInfo@)">
+            <summary>
+            自ノード情報を取得する
+            </summary>
+            <param name="nodeInfo">ノード情報を格納したFLNodeInfoオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.GetNodeList(Binarix.FALink.FLNodeList@)">
+            <summary>
+            ノード一覧を取得する
+            </summary>
+            <param name="nodeList">ノード一覧を格納したFLNodeListオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.GetLog(Binarix.FALink.FLLogData@)">
+            <summary>
+            ログを取得する
+            </summary>
+            <param name="logData">ログデータを格納したFLLogDataオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.ClearLog">
+            <summary>
+            ログをクリアする
+            </summary>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.GetSocketError(System.Int32@)">
+            <summary>
+            ソケットエラーを取得する
+            </summary>
+            <param name="socketError">ソケットエラーコードを格納する変数の参照</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.LoadSettings(Binarix.FALink.FLSettings@)">
+            <summary>
+            自ノードのネットワークパラメーターを取得する
+            </summary>
+            <param name="settings">ネットワークパラメーターを格納したFLSettingsオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.SaveSettings(Binarix.FALink.FLSettings@)">
+            <summary>
+            自ノードのネットワークパラメーターの設定と保存をする
+            </summary>
+            <param name="settings">ネットワークパラメーターを格納したFLSettingsオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.EnumIPAddress(System.UInt32[]@)">
+            <summary>
+            IPアドレス一覧を取得する
+            </summary>
+            <param name="address">IPアドレス一覧を格納した配列</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.GetVersion(Binarix.FALink.FLVersion@)">
+            <summary>
+            サービスのバージョンを取得する
+            </summary>
+            <param name="version">バージョンを格納したFLVersionオブジェクト</param>
+            <returns>FLResult列挙型の値。正常に終了した時はFLResult.OKを返す。</returns>
+        </member>
+        <member name="M:Binarix.FALink.FLnet.Dispose(System.Boolean)">
+            <summary>
+            リソースを破棄する
+            </summary>
+            <param name="disposing">マネージリソースとアンマネージリソースの両方を解放する場合はtrue。アンマネージリソースだけを解放する場合はfalse。</param>
+        </member>
+        <member name="P:Binarix.FALink.FLnet.NetworkID">
+            <summary>
+            ネットワークID
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLnet.IsOpen">
+            <summary>
+            ネットワークオープン状態
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.StatusChanged">
+            <summary>
+            ノード状態変更イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.SendEnded">
+            <summary>
+            メッセージ送信終了イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.RequestReadByteReceived">
+            <summary>
+            バイトブロックリード要求メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.RequestWriteByteReceived">
+            <summary>
+            バイトブロックライト要求メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.RequestReadWordReceived">
+            <summary>
+            ワードブロックリード要求メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.RequestWriteWordReceived">
+            <summary>
+            ワードブロックライト要求メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.RequestStopReceived">
+            <summary>
+            停止指令要求メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.RequestStartReceived">
+            <summary>
+            運転指令要求メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.RequestVenderMessageReceived">
+            <summary>
+            ベンダー固有要求メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyReadByteReceived">
+            <summary>
+            バイトブロックリード応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyWriteByteReceived">
+            <summary>
+            バイトブロックライト応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyReadWordReceived">
+            <summary>
+            ワードブロックリード応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyWriteWordReceived">
+            <summary>
+            ワードブロックライト応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyReadParamReceived">
+            <summary>
+            ネットワークパラメータリード応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyWriteParamReceived">
+            <summary>
+            ネットワークパラメータライト応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyStopReceived">
+            <summary>
+            停止指令応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyStartReceived">
+            <summary>
+            運転指令応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyReadProfileReceived">
+            <summary>
+            プロファイルリード応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyReadLogReceived">
+            <summary>
+            ログデータリード応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyClearLogReceived">
+            <summary>
+            ログデータクリア応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyLoopBackReceived">
+            <summary>
+            メッセージ折返し応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.ReplyVenderMessageReceived">
+            <summary>
+            ベンダー固有応答メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="E:Binarix.FALink.FLnet.UserMessageReceived">
+            <summary>
+            透過形メッセージ受信イベント
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLnet.FLStatusEventHandler">
+            <summary>
+            ノード状態通知デリゲート
+            </summary>
+            <param name="sender">イベントのソース</param>
+            <param name="e">イベントデータを格納しているFAStatusEventArgs</param>
+        </member>
+        <member name="T:Binarix.FALink.FLnet.FLMessageSentEventHandler">
+            <summary>
+            メッセージ送信終了デリゲート
+            </summary>
+            <param name="sender">イベントのソース</param>
+            <param name="e">イベントデータを格納しているFAMessageEventArgs</param>
+        </member>
+        <member name="T:Binarix.FALink.FLnet.FLMessageReceivedEventHandler">
+            <summary>
+            メッセージ受信デリゲート
+            </summary>
+            <param name="sender">イベントのソース</param>
+            <param name="e">イベントデータを格納しているFAMessageEventArgs</param>
+        </member>
+        <member name="T:Binarix.FALink.FLMessageSent">
+            <summary>
+            送信メッセージクラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageSent.Result">
+            <summary>
+            送信結果
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLMessageReceived">
+            <summary>
+            受信メッセージクラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageReceived.Reply">
+            <summary>
+            応答結果
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLMessageSentEventArgs">
+            <summary>
+            メッセージ送信イベント引数クラス
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.FLMessageSentEventArgs.#ctor(Binarix.FALink.FLMessageSent)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="message">メッセージ</param>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageSentEventArgs.Message">
+            <summary>
+            メッセージ
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLVersion">
+            <summary>
+            バージョンクラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLVersion.Major">
+            <summary>
+            メジャーバージョン
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLVersion.Minor">
+            <summary>
+            マイナーバージョン
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLVersion.Build">
+            <summary>
+            ビルド番号
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLVersion.Revision">
+            <summary>
+            リビジョン
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLNodeList">
+            <summary>
+            ノード一覧クラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeList.OwnNode">
+            <summary>
+            自ノード番号
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeList.NodeStatus">
+            <summary>
+            全ノード状態
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLMessageReceivedEventArgs">
+            <summary>
+            メッセージ受信イベント引数クラス
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.FLMessageReceivedEventArgs.#ctor(Binarix.FALink.FLMessageReceived)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="message">メッセージ</param>
+        </member>
+        <member name="P:Binarix.FALink.FLMessageReceivedEventArgs.Message">
+            <summary>
+            メッセージ
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLNodeInfo">
+            <summary>
+            ノード情報クラス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.Node">
+            <summary>
+            ノード番号
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.NodeStatus">
+            <summary>
+            ノード状態
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.NodeName">
+            <summary>
+            ノード名（設備名）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.VenderName">
+            <summary>
+            ベンダー名
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.ModelName">
+            <summary>
+            製造業者形式
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.ProtocolType">
+            <summary>
+            プロトコルタイプ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.FALinkStatus">
+            <summary>
+            FAリンク状態
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.UpperLayerStatus">
+            <summary>
+            上位層の状態
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.C1Address">
+            <summary>
+            コモンメモリ領域1先頭アドレス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.C1Size">
+            <summary>
+            コモンメモリ領域1サイズ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.C2Address">
+            <summary>
+            コモンメモリ領域2先頭アドレス
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.C2Size">
+            <summary>
+            コモンメモリ領域2サイズ
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.MinFrameTime">
+            <summary>
+            最小許容フレーム間隔（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.TokenWatchdogTime">
+            <summary>
+            トークン監視時間（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.RefreshCycleTime">
+            <summary>
+            リフレッシュサイクル許容時間（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.RefreshCycleCurTime">
+            <summary>
+            リフレッシュサイクル時間現在値（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.RefreshCycleMinTime">
+            <summary>
+            リフレッシュサイクル時間最小値（ミリ秒）
+            </summary>
+        </member>
+        <member name="P:Binarix.FALink.FLNodeInfo.RefreshCycleMaxTime">
+            <summary>
+            リフレッシュサイクル時間最大値（ミリ秒）
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLStatusEventArgs">
+            <summary>
+            ノード状態変更イベント引数クラス
+            </summary>
+        </member>
+        <member name="M:Binarix.FALink.FLStatusEventArgs.#ctor(Binarix.FALink.FLnetID)">
+            <summary>
+            コンストラクター
+            </summary>
+            <param name="networkID">ネットワークID</param>
+        </member>
+        <member name="P:Binarix.FALink.FLStatusEventArgs.NetworkID">
+            <summary>
+            ネットワークID
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLResult">
+            <summary>
+            メソッド戻り値
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.OK">
+            <summary>
+            正常終了
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.AlreadyOpened">
+            <summary>
+            既にオープンしている
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.ProcessLimitExceeded">
+            <summary>
+            同時参照可能プロセス数が制限を超えた
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.NoSystemResources">
+            <summary>
+            システムリソースが不足している
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.UnableToClose">
+            <summary>
+            イベント内からの呼び出しでクローズできない
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.UnableToSaveSettings">
+            <summary>
+            オープン状態で自ノードのネットワークパラメーターの保存（設定）ができない
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidSettings">
+            <summary>
+            自ノードのネットワークパラメーターに無効な値が設定されている
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.SocketError">
+            <summary>
+            ソケットエラーが発生した
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.UnableToSendMessage">
+            <summary>
+            メッセージ送信権がない（またはオープンしていない）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.UnableToRegisterMessageProc">
+            <summary>
+            メッセージ通知コールバック関数の登録ができなかった
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.MessageQueueFull">
+            <summary>
+            メッセージ送信キューが満杯で送信できなかった
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidNetwork">
+            <summary>
+            ネットワークIDに無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidNode">
+            <summary>
+            ノード番号に無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidTransactionCode">
+            <summary>
+            トランザクションコードに無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidAddressOrSize">
+            <summary>
+            アドレスまたはサイズに無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidReplyResult">
+            <summary>
+            応答メッセージの結果に無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidVender">
+            <summary>
+            ベンダー名またはサブコードに無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidParameter">
+            <summary>
+            パラメーターに無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.InvalidData">
+            <summary>
+            データに無効な値が指定された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.DataTooLong">
+            <summary>
+            データが大き過ぎる
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.OwnNodeLeft">
+            <summary>
+            自ノードはネットワークに参加してない
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.ServiceError">
+            <summary>
+            サービスに処理を要求できない
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.UnknownCommand">
+            <summary>
+            未定義のコマンドが要求された
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.Timeout">
+            <summary>
+            既定時間内に処理を完了できなかった
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLResult.MarshallingError">
+            <summary>
+            マーシャリングでエラーが発生した
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLnetID">
+            <summary>
+            ネットワークID
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLnetID.ID0">
+            <summary>
+            ネットワークID0
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLnetID.ID1">
+            <summary>
+            ネットワークID1
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLTransactionCode">
+            <summary>
+            トランザクションコード
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestReadByte">
+            <summary>
+            バイトブロックリード要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestWriteByte">
+            <summary>
+            バイトブロックライト要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestReadWord">
+            <summary>
+            ワードブロックリード要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestWriteWord">
+            <summary>
+            ワードブロックライト要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestReadParam">
+            <summary>
+            ネットワークパラメータリードフレーム要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestWriteParam">
+            <summary>
+            ネットワークパラメータライトフレーム要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestStop">
+            <summary>
+            停止指令要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestStart">
+            <summary>
+            運転指令要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestReadProfile">
+            <summary>
+            プロファイルリードフレーム要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestReadLog">
+            <summary>
+            ログデータリードフレーム要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestClearLog">
+            <summary>
+            ログデータクリアフレーム要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestLoopBack">
+            <summary>
+            メッセージ折返しフレーム要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.RequestVender">
+            <summary>
+            ベンダー固有要求メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyReadByte">
+            <summary>
+            バイトブロックリード応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyWriteByte">
+            <summary>
+            バイトブロックライト応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyReadWord">
+            <summary>
+            ワードブロックリード応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyWriteWord">
+            <summary>
+            ワードブロックライト応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyReadParam">
+            <summary>
+            ネットワークパラメータリード応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyWriteParam">
+            <summary>
+            ネットワークパラメータライト応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyStop">
+            <summary>
+            停止指令応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyStart">
+            <summary>
+            運転指令応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyReadProfile">
+            <summary>
+            プロファイルリード応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyReadLog">
+            <summary>
+            ログデータリード応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyClearLog">
+            <summary>
+            ログデータクリア応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyLoopBack">
+            <summary>
+            メッセージ折返し応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.ReplyVender">
+            <summary>
+            ベンダー固有応答メッセージ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.UserFirst">
+            <summary>
+            透過形メッセージ（ユーザー定義メッセージ）の先頭
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLTransactionCode.UserLast">
+            <summary>
+             透過形メッセージ（ユーザー定義メッセージ）の最後
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLMessageResult">
+            <summary>
+            メッセージ送信結果
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.OK">
+            <summary>
+            送信先ノードがメッセージを正常に受信した（または一斉同報送信が完了した）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.BufferFull">
+            <summary>
+            送信先ノードのメッセージバッファが満杯
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.NotReady">
+            <summary>
+            送信先ノードのメッセージ受信処理の初期化が終了していない
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.VersionError">
+            <summary>
+            送信先ノードが通番バージョンエラーを検知した
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.FormatError">
+            <summary>
+            送信先ノードがフォーマット異常を検知した
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.Timeout">
+            <summary>
+            送信先ノードからACK（メッセージ通達確認）を規定時間内に受信できなかった
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.DestinationLeft">
+            <summary>
+            送信先ノードが離脱している
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageResult.SocketError">
+            <summary>
+            ソケットエラーが発生した
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLMessageReply">
+            <summary>
+            メッセージ応答結果
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageReply.OK">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageReply.Error">
+            <summary>
+            異常
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLMessageReply.Unsupported">
+            <summary>
+            未実装
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLNetworkParamOptions">
+            <summary>
+            ネットワークパラメータライト要求メッセージの設定パラメータフラグ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNetworkParamOptions.Address">
+            <summary>
+            アドレス設定指定
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNetworkParamOptions.Name">
+            <summary>
+            ノード名設定指定
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNetworkParamOptions.AddressName">
+            <summary>
+            アドレスとノード名の両方設定指定
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLUpperLayerStatus">
+            <summary>
+            上位層の状態（ULS）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLUpperLayerStatus.Stop">
+            <summary>
+            STOP
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLUpperLayerStatus.Warning">
+            <summary>
+            WARNING（0:エラーなし 1:エラーあり）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLUpperLayerStatus.Alarm">
+            <summary>
+            ALARM（0:エラーなし 1:エラーあり）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLUpperLayerStatus.Run">
+            <summary>
+            RUN（0:STOP 1:RUN）
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLFALinkStatus">
+            <summary>
+            FAリンク状態（LKS）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLFALinkStatus.Left">
+            <summary>
+            離脱
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLFALinkStatus.Participation">
+            <summary>
+            参加状態（0:離脱 1:参加）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLFALinkStatus.TokenModeConflict">
+            <summary>
+            通信無効検知（0:検知なし 1:検知あり）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLFALinkStatus.ULWatchdogError">
+            <summary>
+            上位層動作信号エラー（0:エラーなし 1:エラーあり）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLFALinkStatus.DataEnable">
+            <summary>
+            コモンメモリデータ有効通知（0:無効 1:有効）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLFALinkStatus.AddressEnable">
+            <summary>
+            コモンメモリアドレス・サイズ設定完了（0:未完了 1:完了）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLFALinkStatus.AddressConflict">
+            <summary>
+            アドレス重複検知（0:エラーなし 1:エラーあり）
+            </summary>
+        </member>
+        <member name="T:Binarix.FALink.FLNodeStatus">
+            <summary>
+            ノード状態
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.Left">
+            <summary>
+            離脱
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.Participation">
+            <summary>
+            参加状態（0:離脱 1:参加）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.TokenModeConflict">
+            <summary>
+            通信無効検知（0:検知なし 1:検知あり）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.AddressConflict">
+            <summary>
+            アドレス重複検知（0:エラーなし 1:エラーあり）
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.NodeNumberConflict">
+            <summary>
+            ノード番号重複フラグ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.TokenHoldingTimeout">
+            <summary>
+            トークン保持時間タイムアウト
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.FrameWaiting">
+            <summary>
+            受信待ち状態フラグ
+            </summary>
+        </member>
+        <member name="F:Binarix.FALink.FLNodeStatus.InitializeError">
+            <summary>
+            初期化エラーフラグ
+            </summary>
+        </member>
+    </members>
+</doc>
